@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/tour-de-friends/precache-manifest.1fa05e2a704e118da195f42ffe70c64e.js"
+  "/tour-de-friends/precache-manifest.bcc064c599973b308a9dc0f13b186614.js"
 );
 
 self.addEventListener('message', (event) => {

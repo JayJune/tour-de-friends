@@ -8,7 +8,8 @@ class App extends React.Component {
     super(props, context);
     this.state = {
       loginName: "",
-      loggedIn: false
+      loggedIn: false,
+      valid: true
     }
   }
 
@@ -23,21 +24,33 @@ class App extends React.Component {
   }
 
   toggleLoggedIn = () => {
-    var newLoggedIn = true;
+    var newLoggedIn = this.state.loggedIn;
     var newLoginName = this.state.loginName;
-    if(this.state.loggedIn){
-      newLoggedIn = false;
-      newLoginName = "";
+    if(newLoggedIn){
+      this.setState({
+        loggedIn: false,
+        loginName: "",
+        valid: true
+      });
     }
-    this.setState({
-      loggedIn: newLoggedIn,
-      loginName: newLoginName
-    });
+    else{
+      if(newLoginName){
+        this.setState({
+          loggedIn: true,
+          loginName: newLoginName
+        });
+      }
+      else{
+        this.setState({
+          valid: false
+        });
+      }
+    }
   } 
 
   render(){
     return (
-      <div className="App" style={{height: window.innerHeight}}>
+      <div className="App">
         <TDFNav 
           loggedIn={this.state.loggedIn}
           loginName={this.state.loginName}
@@ -48,6 +61,7 @@ class App extends React.Component {
         : <TDFLoginPage 
             changeHandler={this.changeHandler}
             toggleLoggedIn={this.toggleLoggedIn}
+            valid={this.state.valid}
           />
         }
       </div>

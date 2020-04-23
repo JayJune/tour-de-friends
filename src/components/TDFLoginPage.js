@@ -3,34 +3,38 @@ import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 
 const TDFLoginPage = props => {
+    var myFormGroupName = props.valid ? "form-group" : "form-group has-danger";
+    var myFormControlName = props.valid ? "form-control" : "form-control is-invalid";
+    console.log(props.valid);
     return(
-        <div className="vertical-grow-full">
-            <div className="vertical-center-flex" style={{height: "100%"}}>
-                <div className="center-with-padding form-group">
-                    <label htmlFor="loginName">Login Name</label>
-                    <input type="text" 
-                        className="form-control"
-                        id="loginName"
-                        name="loginName" 
-                        onChange={props.changeHandler}
-                        placeholder="Enter login" 
-                        value={props.loginName} 
-                    />
-                </div>
-                <div className="center-with-padding form-group">
-                    <label htmlFor="password">Password</label>
-                    <input type="password" 
-                        className="form-control"
-                        id="password"
-                        placeholder="Password" 
-                    />
-                </div>
+        <div style={{display: "flex"}}>
+            <div className="pad-center"></div>
+            <div className="vertical-center-flex">
                 <div className="center-with-padding">
-                    <Button variant="warning" onClick={props.toggleLoggedIn}>
+                    <div className={myFormGroupName}>
+                        <input type="text" 
+                            className={myFormControlName}
+                            id="loginName"
+                            name="loginName" 
+                            onChange={props.changeHandler}
+                            placeholder="Username" 
+                            value={props.loginName} 
+                        />
+                        {!props.valid && <div className="invalid-feedback">Please enter a valid username.</div>}
+                    </div>
+                    <div className="form-group">
+                        <input type="password" 
+                            className="form-control"
+                            id="password"
+                            placeholder="Password" 
+                        />
+                    </div>
+                    <Button variant="warning btn-lg btn-block" onClick={props.toggleLoggedIn}>
                         Login
                     </Button>
                 </div>
             </div>
+            <div className="pad-center"></div>
         </div>
     )
 }

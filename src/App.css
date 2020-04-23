@@ -31,17 +31,27 @@
 }
 
 .center-with-padding {
-  padding-left: 5%;
-  padding-right: 5%;
+  align-content: flex-start;
+  width: 80%;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.header-nav-bar{
+  position: absolute;
+}
+
+.pad-center{
+  flex-grow: 3;
 }
 
 .vertical-center-flex {
   display: flex;
-  justify-content: center;
+  flex-basis: 600px;
+  padding-top: 30px;
   flex-direction: column;
-}
-.vertical-grow-full {
-  flex-grow: 1
+  align-items: center;
+  flex-grow: 1;
 }
 
 @keyframes App-logo-spin {

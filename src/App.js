@@ -14,14 +14,13 @@ import {
   Route,
   Link
 } from "react-router-dom";
-
 class App extends React.Component {
   constructor(props, context) {
     super(props, context);
     this.state = {
       loginName: "",
       loggedIn: false,
-      valid: true
+      valid: true,
     }
   }
 
@@ -36,7 +35,7 @@ class App extends React.Component {
   }
 
   routeTo = (location) => {
-    history.push(location);
+    history.push(`${process.env.PUBLIC_URL}${location}`);
   }
 
   toggleLoggedIn = () => {
@@ -48,6 +47,7 @@ class App extends React.Component {
         loginName: "",
         valid: true
       });
+      history.push(`${process.env.PUBLIC_URL}/`);
     }
     else{
       if(newLoginName){
@@ -55,7 +55,7 @@ class App extends React.Component {
           loggedIn: true,
           loginName: newLoginName
         });
-        history.push('/');
+        history.push(`${process.env.PUBLIC_URL}/`);
       }
       else{
         this.setState({
@@ -66,9 +66,10 @@ class App extends React.Component {
   } 
 
   render(){
+    const myUrlPrefix = process.env.PUBLIC_URL;
     return (
       <div className="App">
-        <Router history={history}>
+        <Router basename={"/tour-de-friends"} history={history} >
           <TDFNav 
             loggedIn={this.state.loggedIn}
             loginName={this.state.loginName}
@@ -76,26 +77,26 @@ class App extends React.Component {
             toggleLoggedIn={this.toggleLoggedIn}
           />
           <Switch>
-            <Route exact path="/">
+            <Route exact path={`${myUrlPrefix}/`}>
               <News />
             </Route>
-            <Route path="/login">
+            <Route path={`${myUrlPrefix}/login`}>
               <TDFLoginPage 
                 changeHandler={this.changeHandler}
                 toggleLoggedIn={this.toggleLoggedIn}
                 valid={this.state.valid}
               />
             </Route>
-            <Route path="/social">
+            <Route path={`${myUrlPrefix}/social`}>
               <Social />
             </Route>
-            <Route path="/stream">
+            <Route path={`${myUrlPrefix}/stream`}>
               <Stream />
             </Route>
-            <Route path="/about">
+            <Route path={`${myUrlPrefix}/about`}>
               <About />
             </Route>
-            <Route path="/myProfile">
+            <Route path={`${myUrlPrefix}/myProfile`}>
               <Profile />
             </Route>
           </Switch>

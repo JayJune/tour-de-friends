@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/tour-de-friends/static/css/main.a3950a90.chunk.css",
-    "main.js": "/tour-de-friends/static/js/main.7a662e6f.chunk.js",
-    "main.js.map": "/tour-de-friends/static/js/main.7a662e6f.chunk.js.map",
+    "main.js": "/tour-de-friends/static/js/main.f2431496.chunk.js",
+    "main.js.map": "/tour-de-friends/static/js/main.f2431496.chunk.js.map",
     "runtime-main.js": "/tour-de-friends/static/js/runtime-main.86cabf0a.js",
     "runtime-main.js.map": "/tour-de-friends/static/js/runtime-main.86cabf0a.js.map",
     "static/js/2.6d59c7a8.chunk.js": "/tour-de-friends/static/js/2.6d59c7a8.chunk.js",
     "static/js/2.6d59c7a8.chunk.js.map": "/tour-de-friends/static/js/2.6d59c7a8.chunk.js.map",
     "index.html": "/tour-de-friends/index.html",
-    "precache-manifest.6fc0a5f701b80c4f69ea486b43ab0e63.js": "/tour-de-friends/precache-manifest.6fc0a5f701b80c4f69ea486b43ab0e63.js",
+    "precache-manifest.8e59ec464a0f511b2fedeb8c61d615ff.js": "/tour-de-friends/precache-manifest.8e59ec464a0f511b2fedeb8c61d615ff.js",
     "service-worker.js": "/tour-de-friends/service-worker.js",
     "static/css/main.a3950a90.chunk.css.map": "/tour-de-friends/static/css/main.a3950a90.chunk.css.map",
     "static/js/2.6d59c7a8.chunk.js.LICENSE.txt": "/tour-de-friends/static/js/2.6d59c7a8.chunk.js.LICENSE.txt"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.86cabf0a.js",
     "static/js/2.6d59c7a8.chunk.js",
     "static/css/main.a3950a90.chunk.css",
-    "static/js/main.7a662e6f.chunk.js"
+    "static/js/main.f2431496.chunk.js"
   ]
 }

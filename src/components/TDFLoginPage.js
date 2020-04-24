@@ -5,7 +5,6 @@ import Button from 'react-bootstrap/Button'
 const TDFLoginPage = props => {
     var myFormGroupName = props.valid ? "form-group" : "form-group has-danger";
     var myFormControlName = props.valid ? "form-control" : "form-control is-invalid";
-    console.log(props.valid);
     return(
         <div style={{display: "flex"}}>
             <div className="pad-center"></div>

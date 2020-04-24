@@ -6,22 +6,24 @@ import NavDropdown from 'react-bootstrap/NavDropdown'
 const TDFNav = props => {
     return(
         <Navbar collapseOnSelect expand="md" bg="warning" variant="light">
-            <Navbar.Brand href="#home">Tour de Friends</Navbar.Brand>
+            <Navbar.Brand>Tour de Friends</Navbar.Brand>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
                 <Nav className="mr-auto">
-                    <Nav.Link href="#home">Home</Nav.Link>
-                    <Nav.Link href="#news">News</Nav.Link>
-                    <Nav.Link href="#social">Social</Nav.Link>
-                    <Nav.Link href="#stream">Stream</Nav.Link>
+                    <Nav.Link onClick={() => props.routeTo("/")}>News</Nav.Link>
+                    <Nav.Link onClick={() => props.routeTo("/social")}>Social</Nav.Link>
+                    <Nav.Link onClick={() => props.routeTo("/stream")}>Stream</Nav.Link>
                 </Nav>
-                {props.loggedIn &&
+                {props.loggedIn ?
                     <Nav>
                         <NavDropdown title={props.loginName} id="collasible-nav-dropdown">
                             <NavDropdown.Item>My Profile</NavDropdown.Item>
                             <NavDropdown.Item onClick={props.toggleLoggedIn}>Log out</NavDropdown.Item>
                         </NavDropdown>
                     </Nav>
+                : <Nav>
+                    <Nav.Link onClick={() => props.routeTo("/login")}>Login</Nav.Link>
+                </Nav>
                 }
             </Navbar.Collapse>
         </Navbar>

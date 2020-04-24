@@ -1,7 +1,15 @@
 import React, { Component } from "react";
 import './App.css';
+import News from "./components/News";
 import TDFNav from "./components/TDFNav";
 import TDFLoginPage from "./components/TDFLoginPage";
+import history from "./history.js";
+import {
+  Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 
 class App extends React.Component {
   constructor(props, context) {
@@ -23,6 +31,10 @@ class App extends React.Component {
     })
   }
 
+  routeTo = (location) => {
+    history.push(location);
+  }
+
   toggleLoggedIn = () => {
     var newLoggedIn = this.state.loggedIn;
     var newLoginName = this.state.loginName;
@@ -39,6 +51,7 @@ class App extends React.Component {
           loggedIn: true,
           loginName: newLoginName
         });
+        history.push('/');
       }
       else{
         this.setState({
@@ -51,19 +64,32 @@ class App extends React.Component {
   render(){
     return (
       <div className="App">
-        <TDFNav 
-          loggedIn={this.state.loggedIn}
-          loginName={this.state.loginName}
-          toggleLoggedIn={this.toggleLoggedIn}
-        />
-        {this.state.loggedIn ? 
-        <div>show logged in stuff</div>
-        : <TDFLoginPage 
-            changeHandler={this.changeHandler}
+        <Router history={history}>
+          <TDFNav 
+            loggedIn={this.state.loggedIn}
+            loginName={this.state.loginName}
+            routeTo={this.routeTo}
             toggleLoggedIn={this.toggleLoggedIn}
-            valid={this.state.valid}
           />
-        }
+          <Switch>
+            <Route exact path="/">
+              <News />
+            </Route>
+            <Route path="/login">
+              <TDFLoginPage 
+                changeHandler={this.changeHandler}
+                toggleLoggedIn={this.toggleLoggedIn}
+                valid={this.state.valid}
+              />
+            </Route>
+            {/* <Route path="/about">
+              <About />
+            </Route>
+            <Route path="/myProfile">
+              <Profile />
+            </Route> */}
+          </Switch>
+        </Router>
       </div>
     );
   }

@@ -13,11 +13,12 @@ const TDFNav = props => {
                     <Nav.Link onClick={() => props.routeTo("/")}>News</Nav.Link>
                     <Nav.Link onClick={() => props.routeTo("/social")}>Social</Nav.Link>
                     <Nav.Link onClick={() => props.routeTo("/stream")}>Stream</Nav.Link>
+                    <Nav.Link onClick={() => props.routeTo("/about")}>About</Nav.Link>
                 </Nav>
                 {props.loggedIn ?
                     <Nav>
                         <NavDropdown title={props.loginName} id="collasible-nav-dropdown">
-                            <NavDropdown.Item>My Profile</NavDropdown.Item>
+                            <NavDropdown.Item onClick={() => props.routeTo("/myProfile")}>My Profile</NavDropdown.Item>
                             <NavDropdown.Item onClick={props.toggleLoggedIn}>Log out</NavDropdown.Item>
                         </NavDropdown>
                     </Nav>

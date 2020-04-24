@@ -1,6 +1,10 @@
 import React, { Component } from "react";
 import './App.css';
 import News from "./components/News";
+import Social from "./components/Social";
+import Stream from "./components/Stream";
+import About from "./components/About";
+import Profile from "./components/Profile";
 import TDFNav from "./components/TDFNav";
 import TDFLoginPage from "./components/TDFLoginPage";
 import history from "./history.js";
@@ -82,12 +86,18 @@ class App extends React.Component {
                 valid={this.state.valid}
               />
             </Route>
-            {/* <Route path="/about">
+            <Route path="/social">
+              <Social />
+            </Route>
+            <Route path="/stream">
+              <Stream />
+            </Route>
+            <Route path="/about">
               <About />
             </Route>
             <Route path="/myProfile">
               <Profile />
-            </Route> */}
+            </Route>
           </Switch>
         </Router>
       </div>

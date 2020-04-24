@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "2c135dd6bd0b46f45d3341d0e1570db0",
+    "revision": "e2fd3be93fc410c3cad3147dd3e4a93f",
     "url": "/tour-de-friends/index.html"
   },
   {
-    "revision": "6a81e71c728b64cff3ed",
+    "revision": "60603e40acca678a0c01",
     "url": "/tour-de-friends/static/css/main.a3950a90.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/tour-de-friends/static/js/2.6d59c7a8.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "6a81e71c728b64cff3ed",
-    "url": "/tour-de-friends/static/js/main.f2431496.chunk.js"
+    "revision": "60603e40acca678a0c01",
+    "url": "/tour-de-friends/static/js/main.111f2b27.chunk.js"
   },
   {
     "revision": "83274b77684a0558c1ce",

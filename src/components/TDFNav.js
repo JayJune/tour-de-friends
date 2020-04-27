@@ -17,7 +17,7 @@ const TDFNav = props => {
                 </Nav>
                 {props.loggedIn ?
                     <Nav>
-                        <NavDropdown title={props.loginName} id="collasible-nav-dropdown">
+                        <NavDropdown title={props.gName} id="collasible-nav-dropdown">
                             <NavDropdown.Item onClick={() => props.routeTo("/myProfile")}>My Profile</NavDropdown.Item>
                             <NavDropdown.Item onClick={props.toggleLoggedIn}>Log out</NavDropdown.Item>
                         </NavDropdown>

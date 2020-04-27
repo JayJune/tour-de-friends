@@ -18,9 +18,8 @@ class App extends React.Component {
   constructor(props, context) {
     super(props, context);
     this.state = {
-      loginName: "",
-      loggedIn: false,
-      valid: true,
+      gProfile: {},
+      loggedIn: false
     }
   }
 
@@ -38,30 +37,22 @@ class App extends React.Component {
     history.push(`${process.env.PUBLIC_URL}${location}`);
   }
 
-  toggleLoggedIn = () => {
+  toggleLoggedIn = (newProfile) => {
     var newLoggedIn = this.state.loggedIn;
-    var newLoginName = this.state.loginName;
     if(newLoggedIn){
       this.setState({
-        loggedIn: false,
-        loginName: "",
-        valid: true
+        gProfile: {},
+        loggedIn: false
       });
       history.push(`${process.env.PUBLIC_URL}/`);
     }
     else{
-      if(newLoginName){
-        this.setState({
-          loggedIn: true,
-          loginName: newLoginName
-        });
-        history.push(`${process.env.PUBLIC_URL}/`);
-      }
-      else{
-        this.setState({
-          valid: false
-        });
-      }
+      this.setState({
+        gProfile: {...newProfile},
+        loggedIn: true
+      });
+      console.log(this.state);
+      history.push(`${process.env.PUBLIC_URL}/`);
     }
   } 
 
@@ -72,7 +63,7 @@ class App extends React.Component {
         <Router basename={"/tour-de-friends"} history={history} >
           <TDFNav 
             loggedIn={this.state.loggedIn}
-            loginName={this.state.loginName}
+            gName={this.state.gProfile.name}
             routeTo={this.routeTo}
             toggleLoggedIn={this.toggleLoggedIn}
           />

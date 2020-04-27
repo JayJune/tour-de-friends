@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/tour-de-friends/static/css/main.a3950a90.chunk.css",
-    "main.js": "/tour-de-friends/static/js/main.ccd64c1e.chunk.js",
-    "main.js.map": "/tour-de-friends/static/js/main.ccd64c1e.chunk.js.map",
+    "main.css": "/tour-de-friends/static/css/main.ade250bb.chunk.css",
+    "main.js": "/tour-de-friends/static/js/main.9bc2e5e9.chunk.js",
+    "main.js.map": "/tour-de-friends/static/js/main.9bc2e5e9.chunk.js.map",
     "runtime-main.js": "/tour-de-friends/static/js/runtime-main.86cabf0a.js",
     "runtime-main.js.map": "/tour-de-friends/static/js/runtime-main.86cabf0a.js.map",
-    "static/js/2.6d59c7a8.chunk.js": "/tour-de-friends/static/js/2.6d59c7a8.chunk.js",
-    "static/js/2.6d59c7a8.chunk.js.map": "/tour-de-friends/static/js/2.6d59c7a8.chunk.js.map",
+    "static/js/2.4fbfc684.chunk.js": "/tour-de-friends/static/js/2.4fbfc684.chunk.js",
+    "static/js/2.4fbfc684.chunk.js.map": "/tour-de-friends/static/js/2.4fbfc684.chunk.js.map",
     "index.html": "/tour-de-friends/index.html",
-    "precache-manifest.3bb504142056bd3318f959887a58f4cf.js": "/tour-de-friends/precache-manifest.3bb504142056bd3318f959887a58f4cf.js",
+    "precache-manifest.4dfa77c6395483f171f364641fa86f91.js": "/tour-de-friends/precache-manifest.4dfa77c6395483f171f364641fa86f91.js",
     "service-worker.js": "/tour-de-friends/service-worker.js",
-    "static/css/main.a3950a90.chunk.css.map": "/tour-de-friends/static/css/main.a3950a90.chunk.css.map",
-    "static/js/2.6d59c7a8.chunk.js.LICENSE.txt": "/tour-de-friends/static/js/2.6d59c7a8.chunk.js.LICENSE.txt"
+    "static/css/main.ade250bb.chunk.css.map": "/tour-de-friends/static/css/main.ade250bb.chunk.css.map",
+    "static/js/2.4fbfc684.chunk.js.LICENSE.txt": "/tour-de-friends/static/js/2.4fbfc684.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.86cabf0a.js",
-    "static/js/2.6d59c7a8.chunk.js",
-    "static/css/main.a3950a90.chunk.css",
-    "static/js/main.ccd64c1e.chunk.js"
+    "static/js/2.4fbfc684.chunk.js",
+    "static/css/main.ade250bb.chunk.css",
+    "static/js/main.9bc2e5e9.chunk.js"
   ]
 }

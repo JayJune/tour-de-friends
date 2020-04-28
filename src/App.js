@@ -47,8 +47,9 @@ class App extends React.Component {
       history.push(`${process.env.PUBLIC_URL}/`);
     }
     else{
+      console.log(newProfile);
       this.setState({
-        gProfile: {...newProfile},
+        gProfile: newProfile,
         loggedIn: true
       });
       console.log(this.state);
@@ -63,7 +64,7 @@ class App extends React.Component {
         <Router basename={"/tour-de-friends"} history={history} >
           <TDFNav 
             loggedIn={this.state.loggedIn}
-            gName={this.state.gProfile.name}
+            gName={this.state.gProfile.givenName}
             routeTo={this.routeTo}
             toggleLoggedIn={this.toggleLoggedIn}
           />

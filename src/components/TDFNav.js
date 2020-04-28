@@ -2,6 +2,7 @@ import React from 'react';
 import Nav from 'react-bootstrap/Nav'
 import Navbar from 'react-bootstrap/Navbar'
 import NavDropdown from 'react-bootstrap/NavDropdown'
+import { GoogleLogout } from "react-google-login";
 
 const TDFNav = props => {
     return(
@@ -19,7 +20,12 @@ const TDFNav = props => {
                     <Nav>
                         <NavDropdown title={props.gName} id="collasible-nav-dropdown">
                             <NavDropdown.Item onClick={() => props.routeTo("/myProfile")}>My Profile</NavDropdown.Item>
-                            <NavDropdown.Item onClick={props.toggleLoggedIn}>Log out</NavDropdown.Item>
+                            <GoogleLogout
+                                render={renderProps => (
+                                    <NavDropdown.Item onClick={renderProps.onClick}>Log out</NavDropdown.Item>
+                                )}
+                                onLogoutSuccess={props.toggleLoggedIn}
+                            />
                         </NavDropdown>
                     </Nav>
                 : <Nav>

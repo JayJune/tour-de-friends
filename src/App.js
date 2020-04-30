@@ -8,6 +8,7 @@ import Profile from "./components/Profile";
 import TDFNav from "./components/TDFNav";
 import TDFLoginPage from "./components/TDFLoginPage";
 import history from "./history.js";
+
 import {
   Router,
   Switch,
@@ -22,7 +23,7 @@ class App extends React.Component {
       loggedIn: false
     }
   }
-
+  
   changeHandler = event => {
     const name = event.target.name;
     const value = event.target.value;

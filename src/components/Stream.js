@@ -105,10 +105,10 @@ class Stream extends Component {
             }) 
             
             return (
-                <>
-                    Playing now
+                <div className="page-content-holder">
+                    <h2 className="stream-headings">Playing now</h2>
                     <YoutubeFrame ID={this.state.videosItems[this.state.playlistPlayingIndex][this.state.videoPlayingIndex].id.videoId} />
-                    New videos
+                    <h2 className="stream-headings">New videos</h2>
                     <Carousel
                         additionalTransfrom={0}
                         swipeable={true}
@@ -124,7 +124,7 @@ class Stream extends Component {
                     >
                         {myVideosThumbnails[0]}
                     </Carousel>
-                    For You 
+                    <h2 className="stream-headings">For You</h2> 
                     
                     <Carousel
                         additionalTransfrom={0}
@@ -141,7 +141,7 @@ class Stream extends Component {
                     >
                         {myVideosThumbnails[1]}
                     </Carousel>
-                </>
+                </div>
             )
         }
         else{

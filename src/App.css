@@ -63,6 +63,15 @@
 .pad-center{
   flex-grow: 3;
 }
+.page-content-holder {
+  color:white;
+  text-align: left;
+  background-color: black;
+}
+
+.stream-headings {
+  margin: 20px;
+}
 
 .vertical-center-flex {
   display: flex;

@@ -37,6 +37,25 @@
   padding-right: 10px;
 }
 
+.bottom-center-overlay {
+  position: absolute;
+  color: white;
+  bottom: 5px;
+  left: 5px;
+  white-space: nowrap; 
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.centered-overlay {
+  position: absolute;
+  font-weight: 700;
+  color: white;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 .header-nav-bar{
   position: absolute;
 }
@@ -52,6 +71,40 @@
   flex-direction: column;
   align-items: center;
   flex-grow: 1;
+}
+
+.youtube-thumbnail {
+  width: 100%;
+  height: auto;
+  margin: auto;
+  position: absolute;
+  top: -100%;
+  right: -100%;
+  bottom: -100%;
+  left: -100%;
+}
+
+.youtube-thumbnail:hover {
+  filter: brightness(45%);
+}
+.youtube-thumbnail-holder {
+  width: 100%;
+  padding-top: 55%;
+  overflow: hidden;
+  position: relative;
+}
+
+.youtube-thumbnail-holder:hover {
+  cursor: pointer;
+}
+
+.youtube-thumbnail-holder.selected:hover {
+  cursor: auto;
+  filter: brightness(100%);
+}
+
+.youtube-thumbnail.selected {
+  filter: brightness(35%);
 }
 
 /* Shared */

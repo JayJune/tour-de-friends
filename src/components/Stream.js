@@ -10,19 +10,24 @@ class Stream extends Component {
         this.state = {
             error: null,
             isLoaded: false,
-            videoItems: [],
+            isMineLoaded: false,
+            videosItems: [],
+            playlistPlayingIndex: 0, //0 = new videos,
             videoPlayingIndex: 0
         }
     }
 
     componentDidMount(){
-        fetch(`https://www.googleapis.com/youtube/v3/search?key=${process.env.REACT_APP_GAPI_KEY}&channelId=UCSpycUnuU0IVF7gGIhGojhg&part=snippet,id&order=date&maxResults=50`)
+        const videoCount = 10;
+        fetch(`https://www.googleapis.com/youtube/v3/search?key=${process.env.REACT_APP_GAPI_KEY}&channelId=UCSpycUnuU0IVF7gGIhGojhg&part=snippet,id&order=date&maxResults=${videoCount}`)
             .then(res => res.json())
             .then(
                 (result) => {
+                    var myNewVideoItems = [...this.state.videosItems];
+                    myNewVideoItems[0] = result.items;
                     this.setState({
                         isLoaded: true,
-                        videoItems: result.items
+                        videosItems: myNewVideoItems
                     })
                 },
                 (error) => {
@@ -32,10 +37,30 @@ class Stream extends Component {
                     })
                 }
             )
+
+        fetch(`https://www.googleapis.com/youtube/v3/search?key=${process.env.REACT_APP_GAPI_KEY}&q=tour+de+france&part=snippet,id&maxResults=${videoCount}`)
+        .then(res => res.json())
+        .then(
+            (result) => {
+                var myNewVideoItems = [...this.state.videosItems];
+                myNewVideoItems[1] = result.items;
+                this.setState({
+                    isMineLoaded: true,
+                    videosItems: myNewVideoItems
+                })
+            },
+            (error) => {
+                this.setState({
+                    isMineLoaded: true,
+                    error: error
+                })
+            }
+        )
     }
 
-    changeNowPlaying(newIndex){
+    changeNowPlaying(playlistIndex, newIndex){
         this.setState({
+            playlistPlayingIndex: playlistIndex,
             videoPlayingIndex: newIndex
         });
     }
@@ -44,49 +69,77 @@ class Stream extends Component {
         const responsive = {
             desktop: {
                 breakpoint: { max: 3000, min: 1024 },
-                items: 3,
-                slidesToSlide: 3 // optional, default to 1.
+                items: 5,
+                slidesToSlide: 4 // optional, default to 1.
             },
             tablet: {
                 breakpoint: { max: 1024, min: 464 },
-                items: 2,
+                items: 3,
                 slidesToSlide: 2 // optional, default to 1.
             },
             mobile: {
                 breakpoint: { max: 464, min: 0 },
-                items: 1,
+                items: 2,
                 slidesToSlide: 1 // optional, default to 1.
             }
         };
 
-        if (this.state.isLoaded) {
-            console.log(this.state.videoItems);
-            var myThumbnails = this.state.videoItems.map( (video, index) => {
-                if(index !== this.state.videoPlayingIndex && index < 8){
-                    return <YoutubeThumb ID={video.id.videoId} onClick={() => this.changeNowPlaying(index)} />
-                }
-            })
+        if (this.state.isLoaded && this.state.isMineLoaded) {
+            console.log(this.state.videosItems);
+            var myVideosThumbnails = this.state.videosItems.map( (playlist, thisPIndex) =>{
+                return playlist.map( (video, thisVIndex) => {
+                    if(this.state.playlistPlayingIndex === thisPIndex && this.state.videoPlayingIndex === thisVIndex){
+                        return <div key={video.id.videoId} className={"youtube-thumbnail-holder selected"}>
+                                    <YoutubeThumb  ID={video.id.videoId} selected={true} />
+                                    <div className="centered-overlay">Now Playing</div>
+                                    <div className="bottom-center-overlay">{video.snippet.title}</div>
+                                </div>
+                    }   
+                    else{
+                        return <div key={video.id.videoId} className={"youtube-thumbnail-holder"}>
+                                    <YoutubeThumb ID={video.id.videoId} selected={false} onClick={() => this.changeNowPlaying(thisPIndex, thisVIndex)} />
+                                    <div className="bottom-center-overlay">{video.snippet.title}</div>
+                                </div>
+                    }
+                })
+            }) 
+            
             return (
                 <>
                     Playing now
-                    <YoutubeFrame ID={this.state.videoItems[this.state.videoPlayingIndex].id.videoId} />
+                    <YoutubeFrame ID={this.state.videosItems[this.state.playlistPlayingIndex][this.state.videoPlayingIndex].id.videoId} />
                     New videos
                     <Carousel
+                        additionalTransfrom={0}
                         swipeable={true}
                         draggable={false}
                         showDots={false}
                         responsive={responsive}
-                        ssr={false} // means to render carousel on server-side.
+                        ssr={false}
                         infinite={true}
                         autoPlay={false}
-                        autoPlaySpeed={1000}
                         keyBoardControl={true}
-                        customTransition="all .5"
-                        transitionDuration={500}
                         containerClass="carousel-container"
                         itemClass="carousel-item-padding-40-px"
                     >
-                        {myThumbnails}
+                        {myVideosThumbnails[0]}
+                    </Carousel>
+                    For You 
+                    
+                    <Carousel
+                        additionalTransfrom={0}
+                        swipeable={true}
+                        draggable={false}
+                        showDots={false}
+                        responsive={responsive}
+                        ssr={false}
+                        infinite={true}
+                        autoPlay={false}
+                        keyBoardControl={true}
+                        containerClass="carousel-container"
+                        itemClass="carousel-item-padding-40-px"
+                    >
+                        {myVideosThumbnails[1]}
                     </Carousel>
                 </>
             )

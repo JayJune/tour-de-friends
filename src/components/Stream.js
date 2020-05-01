@@ -146,7 +146,7 @@ class Stream extends Component {
         }
         else{
             return(
-                <div>loading...</div>
+                <div className="page-content-holder"> loading...</div>
             )
         }
     }

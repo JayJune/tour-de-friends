@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "bf71bdff5d7183f6268b41ca30d7a6e2",
+    "revision": "62a1bc52dc75d3f82f102367eac35689",
     "url": "/tour-de-friends/index.html"
   },
   {
-    "revision": "6200bf7fbdddbbdc4a4b",
+    "revision": "c8d6e4b7423e80a1fb46",
     "url": "/tour-de-friends/static/css/2.f5c2144b.chunk.css"
   },
   {
-    "revision": "c3c7a9245820d426a78b",
-    "url": "/tour-de-friends/static/css/main.ade250bb.chunk.css"
+    "revision": "7c1eeac62c1e5337e91a",
+    "url": "/tour-de-friends/static/css/main.b916c39b.chunk.css"
   },
   {
-    "revision": "6200bf7fbdddbbdc4a4b",
-    "url": "/tour-de-friends/static/js/2.29648102.chunk.js"
+    "revision": "c8d6e4b7423e80a1fb46",
+    "url": "/tour-de-friends/static/js/2.3b58f03e.chunk.js"
   },
   {
     "revision": "3453b8997016469371284a28c0e873e2",
-    "url": "/tour-de-friends/static/js/2.29648102.chunk.js.LICENSE.txt"
+    "url": "/tour-de-friends/static/js/2.3b58f03e.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "c3c7a9245820d426a78b",
-    "url": "/tour-de-friends/static/js/main.4ecdeb93.chunk.js"
+    "revision": "7c1eeac62c1e5337e91a",
+    "url": "/tour-de-friends/static/js/main.9a407d8a.chunk.js"
   },
   {
     "revision": "de78a03c29076c0e80ba",

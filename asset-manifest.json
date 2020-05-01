@@ -1,26 +1,26 @@
 {
   "files": {
-    "main.css": "/tour-de-friends/static/css/main.ade250bb.chunk.css",
-    "main.js": "/tour-de-friends/static/js/main.4ecdeb93.chunk.js",
-    "main.js.map": "/tour-de-friends/static/js/main.4ecdeb93.chunk.js.map",
+    "main.css": "/tour-de-friends/static/css/main.b916c39b.chunk.css",
+    "main.js": "/tour-de-friends/static/js/main.9a407d8a.chunk.js",
+    "main.js.map": "/tour-de-friends/static/js/main.9a407d8a.chunk.js.map",
     "runtime-main.js": "/tour-de-friends/static/js/runtime-main.02ff2ca2.js",
     "runtime-main.js.map": "/tour-de-friends/static/js/runtime-main.02ff2ca2.js.map",
     "static/css/2.f5c2144b.chunk.css": "/tour-de-friends/static/css/2.f5c2144b.chunk.css",
-    "static/js/2.29648102.chunk.js": "/tour-de-friends/static/js/2.29648102.chunk.js",
-    "static/js/2.29648102.chunk.js.map": "/tour-de-friends/static/js/2.29648102.chunk.js.map",
+    "static/js/2.3b58f03e.chunk.js": "/tour-de-friends/static/js/2.3b58f03e.chunk.js",
+    "static/js/2.3b58f03e.chunk.js.map": "/tour-de-friends/static/js/2.3b58f03e.chunk.js.map",
     "index.html": "/tour-de-friends/index.html",
-    "precache-manifest.5143a18b6a0678bc69d87eeb6f25bdd4.js": "/tour-de-friends/precache-manifest.5143a18b6a0678bc69d87eeb6f25bdd4.js",
+    "precache-manifest.2a56f507a7475ed564a1abffd0c391fe.js": "/tour-de-friends/precache-manifest.2a56f507a7475ed564a1abffd0c391fe.js",
     "service-worker.js": "/tour-de-friends/service-worker.js",
     "static/css/2.f5c2144b.chunk.css.map": "/tour-de-friends/static/css/2.f5c2144b.chunk.css.map",
-    "static/css/main.ade250bb.chunk.css.map": "/tour-de-friends/static/css/main.ade250bb.chunk.css.map",
-    "static/js/2.29648102.chunk.js.LICENSE.txt": "/tour-de-friends/static/js/2.29648102.chunk.js.LICENSE.txt",
+    "static/css/main.b916c39b.chunk.css.map": "/tour-de-friends/static/css/main.b916c39b.chunk.css.map",
+    "static/js/2.3b58f03e.chunk.js.LICENSE.txt": "/tour-de-friends/static/js/2.3b58f03e.chunk.js.LICENSE.txt",
     "static/media/styles.css": "/tour-de-friends/static/media/revicons.2feb69cc.eot"
   },
   "entrypoints": [
     "static/js/runtime-main.02ff2ca2.js",
     "static/css/2.f5c2144b.chunk.css",
-    "static/js/2.29648102.chunk.js",
-    "static/css/main.ade250bb.chunk.css",
-    "static/js/main.4ecdeb93.chunk.js"
+    "static/js/2.3b58f03e.chunk.js",
+    "static/css/main.b916c39b.chunk.css",
+    "static/js/main.9a407d8a.chunk.js"
   ]
 }

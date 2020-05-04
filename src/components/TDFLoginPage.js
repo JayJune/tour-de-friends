@@ -22,7 +22,7 @@ export default class TDFLoginPage extends Component {
                 <div className="vertical-center-flex">
                     <div className="center-with-padding">
                         <GoogleLogin
-                            clientId="160172302129-f6agjeg64is48fdtpl44694la81v1kgb.apps.googleusercontent.com" //TO BE CREATED
+                            clientId={process.env.REACT_APP_CLIENT_ID} //TO BE CREATED
                             render={renderProps => (
                                 <button
                                     className="loginBtn loginBtn--google"
@@ -34,6 +34,7 @@ export default class TDFLoginPage extends Component {
                             )}
                             onSuccess={this.responseGoogle}
                             onFailure={this.showError}
+                            isSignedIn={true}
                         />
                         {/* <button className="loginBtn loginBtn--google" ref="googleLoginBtn">
                             Login with Google

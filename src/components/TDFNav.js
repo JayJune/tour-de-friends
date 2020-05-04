@@ -21,6 +21,7 @@ const TDFNav = props => {
                         <NavDropdown title={props.gName} id="collasible-nav-dropdown">
                             <NavDropdown.Item onClick={() => props.routeTo("/myProfile")}>My Profile</NavDropdown.Item>
                             <GoogleLogout
+                            clientId={process.env.REACT_APP_CLIENT_ID}
                                 render={renderProps => (
                                     <NavDropdown.Item onClick={renderProps.onClick}>Log out</NavDropdown.Item>
                                 )}

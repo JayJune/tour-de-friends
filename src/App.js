@@ -8,6 +8,7 @@ import Profile from "./components/Profile";
 import TDFNav from "./components/TDFNav";
 import TDFLoginPage from "./components/TDFLoginPage";
 import history from "./history.js";
+import { gapi, loadAuth2 } from 'gapi-script'
 
 import {
   Router,
@@ -24,6 +25,17 @@ class App extends React.Component {
     }
   }
   
+  async componentDidMount(){
+    let auth2 = await loadAuth2(process.env.REACT_APP_CLIENT_ID, '')
+    if (auth2.isSignedIn.get()) { //if we are still signed in
+      console.log(auth2);
+      const myState = this.usePersistedState('state', {gProfile: {}, loggedIn: false});
+      this.setState({
+        ...myState
+      })
+    }
+  }
+
   changeHandler = event => {
     const name = event.target.name;
     const value = event.target.value;
@@ -33,6 +45,10 @@ class App extends React.Component {
       ...newState
     })
   }
+
+  // componentWillUnmount(){
+  //   this.usePersistedState('state', null);
+  // }
 
   routeTo = (location) => {
     history.push(`${process.env.PUBLIC_URL}${location}`);
@@ -57,6 +73,16 @@ class App extends React.Component {
       history.push(`${process.env.PUBLIC_URL}/`);
     }
   } 
+
+  usePersistedState(key, defaultValue) {
+    if(defaultValue){
+      const persistedState = localStorage.getItem(key);
+      return persistedState ? JSON.parse(persistedState) : defaultValue;
+    }
+    else{ //if defaultValue is null then save
+      window.localStorage.setItem(key, JSON.stringify(this.state))
+    }
+  }
 
   render(){
     const myUrlPrefix = process.env.PUBLIC_URL;

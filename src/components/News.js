@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import NewsThumb from "./NewsThumb";
 
 function News(props) {
     const [error, setError] = useState(null);
@@ -26,8 +27,10 @@ function News(props) {
                 setError(error);
             }
             )
+        
 
     },[])
+
     if (error) {
         return <div>Error: {error.message}</div>;
       } 
@@ -36,8 +39,21 @@ function News(props) {
     } 
     else {
         console.log(articles);
+        var myNewsTiles = articles.map( (article, index) => {
+            return ( 
+                <NewsThumb 
+                    key={index}
+                    article={article}/>
+            )
+        })
         return(
-            <div>Powered by <a href="https://newsapi.org/">newsapi.org</a></div>
+            <div className={"article-holder container-lg"}>
+                <div className={"page-content-holder"}>
+                    <h1>Latest News</h1>
+                    {myNewsTiles}
+                </div>
+                <div>Powered by <a href="https://newsapi.org/">newsapi.org</a></div>
+            </div>
     )}
 }
 export default News;

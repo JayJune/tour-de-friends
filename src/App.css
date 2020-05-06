@@ -2,6 +2,8 @@
   text-align: center;
   display: flex;
   flex-direction: column;
+  color:white;
+  background-color: black;
 }
 
 .App-logo {
@@ -37,6 +39,19 @@
   padding-right: 10px;
 }
 
+.top-overlay {
+  position: absolute;
+  color: white;
+  top: 30%;
+  left: 10px;
+  font-size: calc(4px + 3vmin);
+  white-space: break-spaces; 
+}
+
+.article-source-text {
+  font-size: calc(4px + 2vmin);
+}
+
 .bottom-center-overlay {
   position: absolute;
   color: white;
@@ -64,9 +79,13 @@
   flex-grow: 3;
 }
 .page-content-holder {
-  color:white;
   text-align: left;
   background-color: black;
+}
+
+.article-holder{
+  margin-bottom: 40px;
+  margin-top: 20px;
 }
 
 .stream-headings {
@@ -92,11 +111,30 @@
   bottom: -100%;
   left: -100%;
 }
+.news-thumbnail {
+  filter: brightness(65%);
+  width: 100%;
+  height: auto;
+  margin: auto;
+  position: absolute;
+  top: -100%;
+  right: -100%;
+  bottom: -100%;
+  left: -100%;
+}
 
 .youtube-thumbnail:hover {
   filter: brightness(45%);
 }
 .youtube-thumbnail-holder {
+  width: 100%;
+  padding-top: 55%;
+  overflow: hidden;
+  position: relative;
+}
+
+.news-thumbnail-holder {
+  margin-bottom: 30px;
   width: 100%;
   padding-top: 55%;
   overflow: hidden;

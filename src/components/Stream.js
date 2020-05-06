@@ -19,7 +19,7 @@ class Stream extends Component {
 
     componentDidMount(){
         const videoCount = 10;
-        fetch(`https://www.googleapis.com/youtube/v3/search?key=${process.env.REACT_APP_GAPI_KEY}&channelId=UCSpycUnuU0IVF7gGIhGojhg&part=snippet,id&order=date&maxResults=${videoCount}`)
+        fetch(`https://www.googleapis.com/youtube/v3/search?key=${process.env.REACT_APP_GAPI_KEY}&channelId=UCSpycUnuU0IVF7gGIhGojhg&type=video&part=snippet,id&order=date&maxResults=${videoCount}`)
             .then(res => res.json())
             .then(
                 (result) => {
@@ -38,7 +38,7 @@ class Stream extends Component {
                 }
             )
 
-        fetch(`https://www.googleapis.com/youtube/v3/search?key=${process.env.REACT_APP_GAPI_KEY}&q=tour+de+france&part=snippet,id&maxResults=${videoCount}`)
+        fetch(`https://www.googleapis.com/youtube/v3/search?key=${process.env.REACT_APP_GAPI_KEY}&q=tour+de+france&type=video&part=snippet,id&maxResults=${videoCount}`)
         .then(res => res.json())
         .then(
             (result) => {
@@ -89,23 +89,26 @@ class Stream extends Component {
             var myVideosThumbnails = this.state.videosItems.map( (playlist, thisPIndex) =>{
                 return playlist.map( (video, thisVIndex) => {
                     if(this.state.playlistPlayingIndex === thisPIndex && this.state.videoPlayingIndex === thisVIndex){
-                        return <div key={video.id.videoId} className={"youtube-thumbnail-holder selected"}>
-                                    <YoutubeThumb  ID={video.id.videoId} selected={true} />
-                                    <div className="centered-overlay">Now Playing</div>
-                                    <div className="bottom-center-overlay">{video.snippet.title}</div>
-                                </div>
-                    }   
+                        return (
+                            <YoutubeThumb 
+                                key={video.id.videoId}
+                                ID={video.id.videoId} 
+                                title={video.snippet.title}
+                                selected={true} />)
+                    }
                     else{
-                        return <div key={video.id.videoId} className={"youtube-thumbnail-holder"}>
-                                    <YoutubeThumb ID={video.id.videoId} selected={false} onClick={() => this.changeNowPlaying(thisPIndex, thisVIndex)} />
-                                    <div className="bottom-center-overlay">{video.snippet.title}</div>
-                                </div>
+                        return (<YoutubeThumb 
+                            key={video.id.videoId}
+                            ID={video.id.videoId} 
+                            title={video.snippet.title}
+                            selected={false} 
+                            onClick={() => this.changeNowPlaying(thisPIndex, thisVIndex)} />)
                     }
                 })
             }) 
             
             return (
-                <div className="page-content-holder">
+                <div className="page-content-holder container-xl">
                     <h2 className="stream-headings">Playing now</h2>
                     <YoutubeFrame ID={this.state.videosItems[this.state.playlistPlayingIndex][this.state.videoPlayingIndex].id.videoId} />
                     <h2 className="stream-headings">New videos</h2>

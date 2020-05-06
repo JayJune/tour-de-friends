@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "1b034410aa10bfd9cded1c8e6f79486e",
+    "revision": "521dd0a25733d5b60dd7ccf82dfd8db3",
     "url": "/tour-de-friends/index.html"
   },
   {
-    "revision": "d65dfd0a1657e7aeae8c",
+    "revision": "e00b68b0d3870714801a",
     "url": "/tour-de-friends/static/css/2.f5c2144b.chunk.css"
   },
   {
-    "revision": "5e6011a03cfca9a993d1",
-    "url": "/tour-de-friends/static/css/main.98badd60.chunk.css"
+    "revision": "49e06c8c767b41da6835",
+    "url": "/tour-de-friends/static/css/main.2d20229a.chunk.css"
   },
   {
-    "revision": "d65dfd0a1657e7aeae8c",
-    "url": "/tour-de-friends/static/js/2.38810a7c.chunk.js"
+    "revision": "e00b68b0d3870714801a",
+    "url": "/tour-de-friends/static/js/2.99bbcb7b.chunk.js"
   },
   {
     "revision": "3453b8997016469371284a28c0e873e2",
-    "url": "/tour-de-friends/static/js/2.38810a7c.chunk.js.LICENSE.txt"
+    "url": "/tour-de-friends/static/js/2.99bbcb7b.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "5e6011a03cfca9a993d1",
-    "url": "/tour-de-friends/static/js/main.c7fc075b.chunk.js"
+    "revision": "49e06c8c767b41da6835",
+    "url": "/tour-de-friends/static/js/main.7c9a98fa.chunk.js"
   },
   {
     "revision": "de78a03c29076c0e80ba",
@@ -38,5 +38,9 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "2feb69ccb596730c72920c6ba3e37ef8",
     "url": "/tour-de-friends/static/media/revicons.2feb69cc.eot"
+  },
+  {
+    "revision": "1d1d234608e0b021f04f490e17e3d92a",
+    "url": "/tour-de-friends/static/media/tdfLogo.1d1d2346.jpg"
   }
 ]);

@@ -1,26 +1,27 @@
 {
   "files": {
-    "main.css": "/tour-de-friends/static/css/main.98badd60.chunk.css",
-    "main.js": "/tour-de-friends/static/js/main.c7fc075b.chunk.js",
-    "main.js.map": "/tour-de-friends/static/js/main.c7fc075b.chunk.js.map",
+    "main.css": "/tour-de-friends/static/css/main.2d20229a.chunk.css",
+    "main.js": "/tour-de-friends/static/js/main.7c9a98fa.chunk.js",
+    "main.js.map": "/tour-de-friends/static/js/main.7c9a98fa.chunk.js.map",
     "runtime-main.js": "/tour-de-friends/static/js/runtime-main.02ff2ca2.js",
     "runtime-main.js.map": "/tour-de-friends/static/js/runtime-main.02ff2ca2.js.map",
     "static/css/2.f5c2144b.chunk.css": "/tour-de-friends/static/css/2.f5c2144b.chunk.css",
-    "static/js/2.38810a7c.chunk.js": "/tour-de-friends/static/js/2.38810a7c.chunk.js",
-    "static/js/2.38810a7c.chunk.js.map": "/tour-de-friends/static/js/2.38810a7c.chunk.js.map",
+    "static/js/2.99bbcb7b.chunk.js": "/tour-de-friends/static/js/2.99bbcb7b.chunk.js",
+    "static/js/2.99bbcb7b.chunk.js.map": "/tour-de-friends/static/js/2.99bbcb7b.chunk.js.map",
     "index.html": "/tour-de-friends/index.html",
-    "precache-manifest.670af7bed13cfafcb2d5fb2d2c2b7218.js": "/tour-de-friends/precache-manifest.670af7bed13cfafcb2d5fb2d2c2b7218.js",
+    "precache-manifest.f8473c5722de455edf75220c465802cd.js": "/tour-de-friends/precache-manifest.f8473c5722de455edf75220c465802cd.js",
     "service-worker.js": "/tour-de-friends/service-worker.js",
     "static/css/2.f5c2144b.chunk.css.map": "/tour-de-friends/static/css/2.f5c2144b.chunk.css.map",
-    "static/css/main.98badd60.chunk.css.map": "/tour-de-friends/static/css/main.98badd60.chunk.css.map",
-    "static/js/2.38810a7c.chunk.js.LICENSE.txt": "/tour-de-friends/static/js/2.38810a7c.chunk.js.LICENSE.txt",
-    "static/media/styles.css": "/tour-de-friends/static/media/revicons.2feb69cc.eot"
+    "static/css/main.2d20229a.chunk.css.map": "/tour-de-friends/static/css/main.2d20229a.chunk.css.map",
+    "static/js/2.99bbcb7b.chunk.js.LICENSE.txt": "/tour-de-friends/static/js/2.99bbcb7b.chunk.js.LICENSE.txt",
+    "static/media/styles.css": "/tour-de-friends/static/media/revicons.2feb69cc.eot",
+    "static/media/tdfLogo.jpg": "/tour-de-friends/static/media/tdfLogo.1d1d2346.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.02ff2ca2.js",
     "static/css/2.f5c2144b.chunk.css",
-    "static/js/2.38810a7c.chunk.js",
-    "static/css/main.98badd60.chunk.css",
-    "static/js/main.c7fc075b.chunk.js"
+    "static/js/2.99bbcb7b.chunk.js",
+    "static/css/main.2d20229a.chunk.css",
+    "static/js/main.7c9a98fa.chunk.js"
   ]
 }

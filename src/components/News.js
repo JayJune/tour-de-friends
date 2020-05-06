@@ -7,7 +7,7 @@ function News(props) {
     const [articles, setArticles] = useState([]);
 
     useEffect(() => {
-        var requestUrl = 'http://newsapi.org/v2/everything?' +
+        var requestUrl = 'https://newsapi.org/v2/everything?' +
         'qInTitle="tour de france"&' +
         'sources?language=en&' +
         'sortBy=popularity&' +

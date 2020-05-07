@@ -59,15 +59,18 @@
   left: 5px;
   white-space: nowrap; 
   overflow: hidden;
+  font-size: calc(6px + 1vmin);
   text-overflow: ellipsis;
+  white-space: break-spaces; 
 }
 
 .centered-overlay {
   position: absolute;
   font-weight: 700;
   color: white;
-  top: 50%;
+  top: 45%;
   left: 50%;
+  font-size: calc(6px + 1vmin);
   transform: translate(-50%, -50%);
 }
 

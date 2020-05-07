@@ -86,64 +86,56 @@ class Stream extends Component {
 
         if (this.state.isLoaded && this.state.isMineLoaded) {
             console.log(this.state.videosItems);
-            var myVideosThumbnails = this.state.videosItems.map( (playlist, thisPIndex) =>{
-                return playlist.map( (video, thisVIndex) => {
-                    if(this.state.playlistPlayingIndex === thisPIndex && this.state.videoPlayingIndex === thisVIndex){
-                        return (
-                            <YoutubeThumb 
+            var myVideosThumbnails = this.state.videosItems.map( (playlist, thisPIndex) => {
+                return( playlist.map( (video, thisVIndex) => {
+                        if(this.state.playlistPlayingIndex === thisPIndex && this.state.videoPlayingIndex === thisVIndex){
+                            return (
+                                <YoutubeThumb 
+                                    key={video.id.videoId}
+                                    ID={video.id.videoId} 
+                                    title={video.snippet.title}
+                                    selected={true} />)
+                        }
+                        else{
+                            return (<YoutubeThumb 
                                 key={video.id.videoId}
                                 ID={video.id.videoId} 
                                 title={video.snippet.title}
-                                selected={true} />)
-                    }
-                    else{
-                        return (<YoutubeThumb 
-                            key={video.id.videoId}
-                            ID={video.id.videoId} 
-                            title={video.snippet.title}
-                            selected={false} 
-                            onClick={() => this.changeNowPlaying(thisPIndex, thisVIndex)} />)
-                    }
-                })
+                                selected={false} 
+                                onClick={() => this.changeNowPlaying(thisPIndex, thisVIndex)} />)
+                        }
+                }))
             }) 
             
+            var myCarousels = myVideosThumbnails.map((thisCarousel) => {
+                return(
+                    <Carousel
+                        additionalTransfrom={0}
+                        swipeable={true}
+                        draggable={false}
+                        showDots={false}
+                        responsive={responsive}
+                        ssr={false}
+                        infinite={true}
+                        autoPlay={false}
+                        keyBoardControl={true}
+                        containerClass="carousel-container"
+                        itemClass="carousel-item-padding-40-px"
+                    >
+                        {thisCarousel}
+                    </Carousel>
+                )
+            })
+
             return (
                 <div className="page-content-holder container-xl">
                     <h2 className="stream-headings">Playing now</h2>
                     <YoutubeFrame ID={this.state.videosItems[this.state.playlistPlayingIndex][this.state.videoPlayingIndex].id.videoId} />
                     <h2 className="stream-headings">New videos</h2>
-                    <Carousel
-                        additionalTransfrom={0}
-                        swipeable={true}
-                        draggable={false}
-                        showDots={false}
-                        responsive={responsive}
-                        ssr={false}
-                        infinite={true}
-                        autoPlay={false}
-                        keyBoardControl={true}
-                        containerClass="carousel-container"
-                        itemClass="carousel-item-padding-40-px"
-                    >
-                        {myVideosThumbnails[0]}
-                    </Carousel>
+                    {myCarousels[0]}
                     <h2 className="stream-headings">For You</h2> 
-                    
-                    <Carousel
-                        additionalTransfrom={0}
-                        swipeable={true}
-                        draggable={false}
-                        showDots={false}
-                        responsive={responsive}
-                        ssr={false}
-                        infinite={true}
-                        autoPlay={false}
-                        keyBoardControl={true}
-                        containerClass="carousel-container"
-                        itemClass="carousel-item-padding-40-px"
-                    >
-                        {myVideosThumbnails[1]}
-                    </Carousel>
+                    {myCarousels[1]}
+                    <h2 className="stream-headings">What Other People Are Watching</h2> 
                 </div>
             )
         }

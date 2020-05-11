@@ -4,6 +4,7 @@
   flex-direction: column;
   color:white;
   background-color: black;
+  min-height: 100vh;
 }
 
 .App-logo {
@@ -64,6 +65,10 @@
   white-space: break-spaces; 
 }
 
+.carousel-container {
+ margin-bottom:2vh;
+}
+
 .centered-overlay {
   position: absolute;
   font-weight: 700;
@@ -72,6 +77,22 @@
   left: 50%;
   font-size: calc(6px + 1vmin);
   transform: translate(-50%, -50%);
+}
+
+.nav-link {
+  text-align: left;
+  margin-left: 3vw;
+}
+
+.dropdown-menu {
+  background-color: #F5E625;
+  border: none;
+}
+
+a.dropdown-item {
+  border: none;
+  border-color: rgba(0,0,0,0.5) !important;
+  border-left-style: solid  !important;
 }
 
 .header-nav-bar{
@@ -92,7 +113,8 @@
 }
 
 .stream-headings {
-  margin: 1vh;
+  margin-top: 1vh;
+  margin-left: 0.5vw;
 }
 
 .vertical-center-flex {

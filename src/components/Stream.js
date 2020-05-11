@@ -11,6 +11,7 @@ class Stream extends Component {
             error: null,
             isLoaded: false,
             isMineLoaded: false,
+            isPopLoaded: false,
             videosItems: [],
             playlistPlayingIndex: 0, //0 = new videos,
             videoPlayingIndex: 0
@@ -39,23 +40,42 @@ class Stream extends Component {
             )
 
         fetch(`https://www.googleapis.com/youtube/v3/search?key=${process.env.REACT_APP_GAPI_KEY}&q=tour+de+france&type=video&part=snippet,id&maxResults=${videoCount}`)
-        .then(res => res.json())
-        .then(
-            (result) => {
-                var myNewVideoItems = [...this.state.videosItems];
-                myNewVideoItems[1] = result.items;
-                this.setState({
-                    isMineLoaded: true,
-                    videosItems: myNewVideoItems
-                })
-            },
-            (error) => {
-                this.setState({
-                    isMineLoaded: true,
-                    error: error
-                })
-            }
-        )
+            .then(res => res.json())
+            .then(
+                (result) => {
+                    var myNewVideoItems = [...this.state.videosItems];
+                    myNewVideoItems[1] = result.items;
+                    this.setState({
+                        isMineLoaded: true,
+                        videosItems: myNewVideoItems
+                    })
+                },
+                (error) => {
+                    this.setState({
+                        isMineLoaded: true,
+                        error: error
+                    })
+                }
+            )        
+            
+        fetch(`https://www.googleapis.com/youtube/v3/search?key=${process.env.REACT_APP_GAPI_KEY}&channelId=UCSpycUnuU0IVF7gGIhGojhg&type=video&part=snippet,id&order=viewCount&maxResults=${videoCount}`)
+            .then(res => res.json())
+            .then(
+                (result) => {
+                    var myNewVideoItems = [...this.state.videosItems];
+                    myNewVideoItems[2] = result.items;
+                    this.setState({
+                        isPopLoaded: true,
+                        videosItems: myNewVideoItems
+                    })
+                },
+                (error) => {
+                    this.setState({
+                        isPopLoaded: true,
+                        error: error
+                    })
+                }
+            )
     }
 
     changeNowPlaying(playlistIndex, newIndex){
@@ -136,6 +156,7 @@ class Stream extends Component {
                     <h2 className="stream-headings">For You</h2> 
                     {myCarousels[1]}
                     <h2 className="stream-headings">What Other People Are Watching</h2> 
+                    {myCarousels[2]}
                 </div>
             )
         }

@@ -1,7 +1,11 @@
 import React, { Component } from "react";
 import './App.css';
 import News from "./components/News";
-import Social from "./components/Social";
+import Map from "./components/Map";
+import Pictures from "./components/Pictures";
+import Hotspots from "./components/Hotspots";
+import FindAFriend from "./components/FindAFriend";
+import Forums from "./components/Forums";
 import Stream from "./components/Stream";
 import About from "./components/About";
 import Profile from "./components/Profile";
@@ -106,8 +110,20 @@ class App extends React.Component {
                 valid={this.state.valid}
               />
             </Route>
-            <Route path={`${myUrlPrefix}/social`}>
-              <Social />
+            <Route path={`${myUrlPrefix}/map`}>
+              <Map />
+            </Route>
+            <Route path={`${myUrlPrefix}/findAFriend`}>
+              <FindAFriend />
+            </Route>
+            <Route path={`${myUrlPrefix}/forums`}>
+              <Forums />
+            </Route>
+            <Route path={`${myUrlPrefix}/pictures`}>
+              <Pictures />
+            </Route>
+            <Route path={`${myUrlPrefix}/hotspots`}>
+              <Hotspots />
             </Route>
             <Route path={`${myUrlPrefix}/stream`}>
               <Stream />

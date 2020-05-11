@@ -12,13 +12,19 @@ const TDFNav = props => {
             <Navbar.Collapse id="responsive-navbar-nav">
                 <Nav className="mr-auto">
                     <Nav.Link onClick={() => props.routeTo("/")}>News</Nav.Link>
-                    <Nav.Link onClick={() => props.routeTo("/social")}>Social</Nav.Link>
+                    <NavDropdown title={"Social"} id="collasible-nav-dropdownLeft">
+                        <NavDropdown.Item onClick={() => props.routeTo("/map")}>Map</NavDropdown.Item>
+                        <NavDropdown.Item onClick={() => props.routeTo("/findAFriend")}>Find a friend</NavDropdown.Item>
+                        <NavDropdown.Item onClick={() => props.routeTo("/forums")}>Forums</NavDropdown.Item>
+                        <NavDropdown.Item onClick={() => props.routeTo("/pictures")}>Pictures</NavDropdown.Item>
+                        <NavDropdown.Item onClick={() => props.routeTo("/hotspots")}>Hotspots</NavDropdown.Item>
+                    </NavDropdown>
                     <Nav.Link onClick={() => props.routeTo("/stream")}>Stream</Nav.Link>
                     <Nav.Link onClick={() => props.routeTo("/about")}>About</Nav.Link>
                 </Nav>
                 {props.loggedIn ?
                     <Nav>
-                        <NavDropdown title={props.gName} id="collasible-nav-dropdown">
+                        <NavDropdown title={props.gName} id="collasible-nav-dropdownRight">
                             <NavDropdown.Item onClick={() => props.routeTo("/myProfile")}>My Profile</NavDropdown.Item>
                             <GoogleLogout
                             clientId={process.env.REACT_APP_CLIENT_ID}
